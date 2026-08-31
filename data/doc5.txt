@@ -1,0 +1,2 @@
+Natural language processing enables computers to understand and process human language. 
+NLP techniques are used for text classification, sentiment analysis, machine translation, question answering, and information retrieval.

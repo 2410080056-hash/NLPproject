@@ -1,0 +1,3 @@
+Weather forecasting uses atmospheric data to predict future weather conditions. 
+Meteorologists analyze temperature, pressure, humidity, wind speed, and satellite observations. 
+Machine learning models can improve predictions of rainfall and extreme weather events.

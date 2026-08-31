@@ -1,0 +1,2 @@
+Cybersecurity protects computers, networks, applications, and data from unauthorized access and malicious attacks. 
+Security techniques include authentication, encryption, firewalls, malware detection, and network monitoring.
