@@ -67,3 +67,6 @@ print("----------------------------")
 for filename, score in results:
 
     print(f"{filename} -> {score:.4f}")
+
+
+    #main
