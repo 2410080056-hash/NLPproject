@@ -1,0 +1,29 @@
+Model,Query,Retrieved,Relevant,Precision,Recall,F1-score
+Baseline TF-IDF,car,doc1.txt,"doc1.txt, doc2.txt",1.0,0.5,0.6666666666666666
+Baseline TF-IDF,car maintenance,doc1.txt,"doc1.txt, doc2.txt",1.0,0.5,0.6666666666666666
+Baseline TF-IDF,healthcare,doc7.txt,doc7.txt,1.0,1.0,1.0
+Baseline TF-IDF,machine learning,"doc3.txt, doc4.txt, doc8.txt, doc9.txt, doc5.txt","doc3.txt, doc4.txt, doc9.txt",0.6,1.0,0.7499999999999999
+Baseline TF-IDF,educational technology,"doc8.txt, doc7.txt",doc8.txt,0.5,1.0,0.6666666666666666
+Baseline TF-IDF,vehicle repair,"doc1.txt, doc2.txt","doc1.txt, doc2.txt",1.0,1.0,1.0
+Baseline TF-IDF,solar energy,doc10.txt,doc10.txt,1.0,1.0,1.0
+Baseline TF-IDF,renewable energy,doc10.txt,doc10.txt,1.0,1.0,1.0
+Baseline TF-IDF,digital learning,"doc3.txt, doc8.txt, doc4.txt, doc9.txt",doc8.txt,0.25,1.0,0.4
+Baseline TF-IDF,technology security,"doc6.txt, doc7.txt, doc8.txt",doc6.txt,0.3333333333333333,1.0,0.5
+Baseline TF-IDF,artificial intelligence,"doc3.txt, doc7.txt, doc8.txt, doc4.txt","doc3.txt, doc7.txt, doc8.txt",0.75,1.0,0.8571428571428571
+Baseline TF-IDF,computers,"doc6.txt, doc5.txt, doc3.txt, doc4.txt","doc3.txt, doc5.txt, doc6.txt",0.75,1.0,0.8571428571428571
+Baseline TF-IDF,power,doc10.txt,doc10.txt,1.0,1.0,1.0
+Baseline TF-IDF,weather forecasting,doc9.txt,doc9.txt,1.0,1.0,1.0
+WordNet + TF-IDF,car,"doc1.txt, doc3.txt, doc2.txt, doc5.txt, doc4.txt","doc1.txt, doc2.txt",0.4,1.0,0.5714285714285715
+WordNet + TF-IDF,car maintenance,"doc1.txt, doc7.txt, doc3.txt, doc2.txt, doc5.txt","doc1.txt, doc2.txt",0.4,1.0,0.5714285714285715
+WordNet + TF-IDF,healthcare,doc7.txt,doc7.txt,1.0,1.0,1.0
+WordNet + TF-IDF,machine learning,"doc3.txt, doc1.txt, doc8.txt, doc4.txt, doc9.txt","doc3.txt, doc4.txt, doc9.txt",0.6,1.0,0.7499999999999999
+WordNet + TF-IDF,educational technology,"doc8.txt, doc7.txt",doc8.txt,0.5,1.0,0.6666666666666666
+WordNet + TF-IDF,vehicle repair,"doc2.txt, doc1.txt, doc7.txt","doc1.txt, doc2.txt",0.6666666666666666,1.0,0.8
+WordNet + TF-IDF,solar energy,doc10.txt,doc10.txt,1.0,1.0,1.0
+WordNet + TF-IDF,renewable energy,doc10.txt,doc10.txt,1.0,1.0,1.0
+WordNet + TF-IDF,digital learning,"doc3.txt, doc8.txt, doc4.txt, doc9.txt",doc8.txt,0.25,1.0,0.4
+WordNet + TF-IDF,technology security,"doc6.txt, doc7.txt, doc8.txt",doc6.txt,0.3333333333333333,1.0,0.5
+WordNet + TF-IDF,artificial intelligence,"doc3.txt, doc7.txt, doc8.txt, doc4.txt","doc3.txt, doc7.txt, doc8.txt",0.75,1.0,0.8571428571428571
+WordNet + TF-IDF,computers,"doc6.txt, doc5.txt, doc3.txt, doc4.txt","doc3.txt, doc5.txt, doc6.txt",0.75,1.0,0.8571428571428571
+WordNet + TF-IDF,power,doc10.txt,doc10.txt,1.0,1.0,1.0
+WordNet + TF-IDF,weather forecasting,"doc9.txt, doc3.txt",doc9.txt,0.5,1.0,0.6666666666666666

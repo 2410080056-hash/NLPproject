@@ -1,69 +1,49 @@
 from preprocessing import preprocess_text
 from query_expansion import expand_query
 from document_loader import load_documents
-from search import search
+from search import build_search_index, search
 
 
-# --------------------------------
-# 1. Load documents
-# --------------------------------
+def display_results(title, results):
+    print(f"\n{title}")
+    print("-" * len(title))
 
-documents, filenames = load_documents("data")
-
-
-# --------------------------------
-# 2. Get user query
-# --------------------------------
-
-query = input("Enter your search query: ")
+    for rank, (filename, score) in enumerate(results, start=1):
+        print(f"{rank}. {filename} -> {score:.4f}")
 
 
-# --------------------------------
-# 3. Preprocess query
-# --------------------------------
+def main():
+    documents, filenames = load_documents("data")
 
-processed_query = preprocess_text(query)
+    if not documents:
+        print("No .txt documents found in the data folder.")
+        return
 
+    # Fit the vectorizer once and reuse it for both search models.
+    vectorizer, document_vectors = build_search_index(documents)
+    vocabulary = set(vectorizer.get_feature_names_out())
 
-# --------------------------------
-# 4. Expand query using WordNet
-# --------------------------------
+    query = input("Enter your search query: ")
+    processed_query = preprocess_text(query)
 
-expanded_query = expand_query(processed_query)
+    # Model 1: Baseline TF-IDF search (no WordNet expansion).
+    baseline_results = search(
+        processed_query, vectorizer, document_vectors, filenames
+    )
 
+    # Model 2: Proposed WordNet-expanded search.
+    expanded_query = expand_query(processed_query, vocabulary)
+    proposed_results = search(
+        expanded_query, vectorizer, document_vectors, filenames
+    )
 
-# --------------------------------
-# 5. Search documents
-# --------------------------------
+    print("\nOriginal query:", query)
+    print("Processed query:", processed_query)
+    print("Expanded query:", expanded_query)
 
-results = search(
-    expanded_query,
-    documents,
-    filenames
-)
-
-
-# --------------------------------
-# 6. Display information
-# --------------------------------
-
-print("\nOriginal Query:")
-print(query)
-
-print("\nProcessed Query:")
-print(processed_query)
-
-print("\nExpanded Query:")
-print(expanded_query)
+    display_results("BASELINE SEARCH (TF-IDF)", baseline_results)
+    display_results("PROPOSED SEARCH (WordNet + TF-IDF)", proposed_results)
 
 
-# --------------------------------
-# 7. Display ranked results
-# --------------------------------
-
-print("\nSearch Results:")
-print("----------------------------")
-
-for filename, score in results:
-
-    print(f"{filename} -> {score:.4f}")
+if __name__ == "__main__":
+    main()
